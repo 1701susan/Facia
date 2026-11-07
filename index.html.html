@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Face &amp; Posture Technique Navigator</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f3f6f4;--sf:#fff;--tx:#17211d;--mu:#56655e;--ac:#1d6b57;--ac2:#e3f1ec;--bd:#d3ddd8;--wr:#fff4dc;--wt:#6b4a00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101715;--sf:#18221f;--tx:#e8f0ec;--mu:#9fb2aa;--ac:#6fd1b4;--ac2:#1f3a32;--bd:#2c3c36;--wr:#3a2f10;--wt:#f1d58a}}
+:root[data-theme="dark"]{--bg:#101715;--sf:#18221f;--tx:#e8f0ec;--mu:#9fb2aa;--ac:#6fd1b4;--ac2:#1f3a32;--bd:#2c3c36;--wr:#3a2f10;--wt:#f1d58a}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 Georgia,"Times New Roman",serif}
+.w{max-width:760px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:1.7rem;line-height:1.2;margin:.2em 0}
+p{margin:.5em 0}
+.mu{color:var(--mu)}
+.note{background:var(--wr);color:var(--wt);border-radius:8px;padding:12px 14px;font:.9rem/1.5 system-ui,sans-serif;margin:16px 0}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0;font-family:system-ui,sans-serif}
+input[type=search]{flex:1 1 100%;padding:11px 12px;border:1px solid var(--bd);border-radius:8px;background:var(--sf);color:var(--tx);font-size:1rem}
+button.f{border:1px solid var(--bd);background:var(--sf);color:var(--tx);border-radius:999px;padding:7px 14px;font-size:.9rem;cursor:pointer}
+button.f[aria-pressed=true]{background:var(--ac);color:var(--bg);border-color:var(--ac)}
+button:focus-visible,summary:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+details{background:var(--sf);border:1px solid var(--bd);border-radius:10px;margin:10px 0}
+summary{cursor:pointer;padding:14px;list-style:none;display:flex;justify-content:space-between;gap:10px;align-items:center;font-family:system-ui,sans-serif}
+summary::-webkit-details-marker{display:none}
+summary b{font-size:1.05rem}
+.tag{font-size:.78rem;background:var(--ac2);color:var(--ac);border-radius:6px;padding:2px 8px;white-space:nowrap}
+.body{padding:0 14px 16px;border-top:1px solid var(--bd)}
+h3{font:600 .95rem system-ui,sans-serif;margin:16px 0 4px}
+ol,ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.3em 0}
+.ev{font:.88rem/1.5 system-ui,sans-serif;background:var(--ac2);border-radius:8px;padding:10px 12px;margin-top:12px}
+.lk{display:inline-block;margin-top:10px;font-family:system-ui,sans-serif;color:var(--ac);font-weight:600}
+label.d{display:flex;gap:8px;align-items:center;margin-top:12px;font:.9rem system-ui,sans-serif}
+#cnt{font:.85rem system-ui,sans-serif}
+</style>
+</head>
+<body>
+<div class="w">
+<h1>Face &amp; posture technique navigator</h1>
+<p class="mu">An organized guide to the techniques Oscar Patel covers on YouTube, with a practice outline for each.</p>
+<div class="note"><b>Read first.</b> These outlines are general summaries written from third-party video digests, not from the videos themselves, and they are not medical advice. The claims behind many of these techniques (changing bone shape or teeth alignment in adults) are not established by clinical research. Stop if you feel pain, numbness, jaw clicking or tooth soreness, and see a dentist or doctor before pressing on your palate or teeth.</div>
+
+<div class="bar" role="search">
+<input type="search" id="q" placeholder="Search techniques (e.g. tongue, neck, breathing)" aria-label="Search techniques">
+<button class="f" aria-pressed="true" data-c="all">All</button>
+<button class="f" aria-pressed="false" data-c="Foundations">Foundations</button>
+<button class="f" aria-pressed="false" data-c="Daily habits">Daily habits</button>
+<button class="f" aria-pressed="false" data-c="Hands-on">Hands-on</button>
+<button class="f" aria-pressed="false" data-c="Body">Body</button>
+</div>
+<div id="cnt" class="mu" aria-live="polite"></div>
+<div id="list"></div>
+<p class="mu" style="font:.85rem system-ui,sans-serif;margin-top:28px">Video links open a YouTube search for his channel so you always get the current uploads. His paid community is separate and not covered here.</p>
+</div>
+
+<script>
+var T=[
+{id:"tongue",n:"Tongue posture (mewing)",c:"Foundations",lvl:"Beginner",
+ what:"Resting the whole tongue, including the back third, against the roof of your mouth with lips closed and teeth lightly touching or slightly apart.",
+ steps:["Close your lips and breathe through your nose.","Place the tip just behind the front teeth, not touching them.","Flatten the rest of the tongue upward against the palate, back third included.","Keep jaw, neck and face relaxed. No clenching.","Check in several times a day until it becomes the default."],
+ ev:"Evidence: tongue posture affects breathing and swallowing, but claims that adults can reshape the face with it are unproven. Low risk if you stay relaxed.",
+ q:"Oscar Patel tongue posture"},
+{id:"breath",n:"Nasal breathing and breathwork",c:"Foundations",lvl:"Beginner",
+ what:"A slow breathing pattern used to calm the nervous system and loosen tension before posture and facial work.",
+ steps:["Sit or stand tall with your tongue on the palate.","Inhale through the nose for about 4 seconds.","Exhale slowly for about 6 seconds.","Repeat for a few minutes, keeping shoulders down.","Stop if you feel dizzy and return to normal breathing."],
+ ev:"Evidence: slow nasal breathing is well supported for relaxation. Skip any breath-hold variants if you have heart, lung or blood pressure concerns.",
+ q:"Oscar Patel breathing technique"},
+{id:"swallow",n:"Proper swallowing",c:"Daily habits",lvl:"Beginner",
+ what:"A swallow pattern that uses the tongue and neck muscles instead of pushing against the teeth or using the cheeks and lips.",
+ steps:["Smile widely and lift your eyes upward.","Press the tongue up against the palate.","Swallow, feeling the muscles under your chin and front of the neck work.","Repeat about five swallows in a row, a few times a day."],
+ ev:"Evidence: orofacial myofunctional therapy for swallowing is real, but is best learned with a trained therapist if you have a tongue thrust or speech issues.",
+ q:"Oscar Patel swallowing"},
+{id:"chew",n:"Chewing and jaw exercise",c:"Daily habits",lvl:"Intermediate",
+ what:"Chewing firm material evenly on both sides to load the jaw muscles.",
+ steps:["Use a firm gum such as mastic, or tough whole foods.","Chew slowly and evenly, alternating sides.","Keep the tongue pattern from the tongue posture lesson.","Start with short sessions and build up gradually."],
+ ev:"Evidence: heavy chewing can cause jaw pain or TMJ strain. If your jaw clicks, aches or locks, stop and see a dentist.",
+ q:"Oscar Patel chewing mastic gum"},
+{id:"neck",n:"Neck training and posture reset",c:"Body",lvl:"Beginner",
+ what:"Strengthening and aligning the neck and shoulders to fix forward head posture.",
+ steps:["Stand against a wall, shoulders back, chin gently tucked.","Slide your head back until it touches the wall without tilting up.","Hold a few seconds, then release.","Add light neck flexion and extension work with control.","Practice during daily walking and sitting."],
+ ev:"Evidence: posture and neck strength work is sound exercise. Go light and avoid it with neck injuries or numbness in the arms.",
+ q:"Oscar Patel forward head posture"},
+{id:"pelvic",n:"Anterior pelvic tilt fix",c:"Body",lvl:"Intermediate",
+ what:"A routine to improve pelvis position and spine alignment, which he links to head and neck posture.",
+ steps:["Stretch the hip flexors and front of the thighs.","Strengthen glutes and abdominals.","Practice standing and walking tall with ribs stacked over the pelvis.","Repeat consistently across several weeks."],
+ ev:"Evidence: hip and glute strengthening is standard physio advice. See a physiotherapist for persistent back pain.",
+ q:"Oscar Patel anterior pelvic tilt RSS"},
+{id:"fascia",n:"Fascia release warm-up",c:"Foundations",lvl:"Beginner",
+ what:"Loosening the front and back body before hands-on work.",
+ steps:["Cobra pose, 30 to 60 seconds, to open the chest.","Forward fold, 30 to 60 seconds, to release the back line.","Neck and shoulder retraction to line up posture.","Optionally apply heat first, such as a warm bath."],
+ ev:"Evidence: stretching and heat help flexibility. Do not push into pain.",
+ q:"Oscar Patel fascia warm up"},
+{id:"thumb",n:"Thumb pulling",c:"Hands-on",lvl:"Advanced",
+ what:"Applying controlled pressure to the roof of the mouth with a thumb to decompress tissue and encourage tongue posture. This is the most debated technique in the set.",
+ steps:["Do the fascia warm-up and breathwork first.","Wash hands and trim the thumbnail.","Stand with your back against a wall, feet about 6 inches forward, shoulders back, chin tucked.","Place a clean thumb flat on the palate and apply even, gentle pressure, never forcing.","Keep breathing slowly, then release and relax the tongue to the palate.","Keep sessions short and stop with any pain."],
+ ev:"Evidence and safety: there is no clinical evidence that this expands the adult palate or moves the maxilla. Pressure can irritate tissue, strain the jaw or loosen dental work. Do not do it with braces, loose teeth, gum disease or jaw pain, and ask a dentist before trying.",
+ q:"Oscar Patel thumb pulling guide"},
+{id:"asym",n:"Facial asymmetry routine",c:"Body",lvl:"Intermediate",
+ what:"A combined approach to even out one-sided habits.",
+ steps:["Notice which side you chew, sleep and lean on.","Switch to even chewing and a neutral sleeping position.","Use the wall posture drill to keep the head centered.","Take front and side photos monthly in the same light to track change."],
+ ev:"Evidence: habits can contribute to subtle asymmetry, but most asymmetry is normal. Sudden changes need a doctor.",
+ q:"Oscar Patel asymmetry"}
+];
+var st={c:"all",q:""},done={};
+try{done=JSON.parse(localStorage.getItem("done")||"{}")}catch(e){}
+function esc(s){return s.replace(/[&<>]/g,function(m){return{"&":"&amp;","<":"&lt;",">":"&gt;"}[m]})}
+function render(){
+ var L=document.getElementById("list"),h="",n=0;
+ T.forEach(function(t){
+  var hay=(t.n+t.what+t.c+t.steps.join(" ")).toLowerCase();
+  if((st.c!=="all"&&t.c!==st.c)||(st.q&&hay.indexOf(st.q)<0))return;
+  n++;
+  h+='<details id="'+t.id+'"><summary><span><b>'+esc(t.n)+'</b><br><span class="mu" style="font-size:.85rem">'+t.c+'</span></span><span class="tag">'+t.lvl+(done[t.id]?' · done':'')+'</span></summary><div class="body"><p>'+esc(t.what)+'</p><h3>How to practice</h3><ol>'+t.steps.map(function(s){return'<li>'+esc(s)+'</li>'}).join("")+'</ol><div class="ev">'+esc(t.ev)+'</div><a class="lk" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query='+encodeURIComponent(t.q)+'">Find his videos on this</a><label class="d"><input type="checkbox" data-d="'+t.id+'"'+(done[t.id]?' checked':'')+'> I have tried this</label></div></details>';
+ });
+ L.innerHTML=h||'<p class="mu">No techniques match. Clear the search or pick All.</p>';
+ document.getElementById("cnt").textContent=n+" of "+T.length+" techniques";
+ var hs=location.hash.slice(1),el=hs&&document.getElementById(hs);if(el)el.open=true;
+}
+document.getElementById("q").addEventListener("input",function(e){st.q=e.target.value.trim().toLowerCase();render()});
+document.querySelectorAll("button.f").forEach(function(b){b.addEventListener("click",function(){
+ document.querySelectorAll("button.f").forEach(function(x){x.setAttribute("aria-pressed","false")});
+ b.setAttribute("aria-pressed","true");st.c=b.dataset.c;render()})});
+document.getElementById("list").addEventListener("change",function(e){
+ var id=e.target.dataset.d;if(!id)return;done[id]=e.target.checked;
+ try{localStorage.setItem("done",JSON.stringify(done))}catch(x){}
+ var s=e.target.closest("details").querySelector(".tag");s.textContent=T.filter(function(t){return t.id===id})[0].lvl+(done[id]?" · done":"");
+});
+window.addEventListener("hashchange",render);
+render();
+</script>
+</body>
+</html>
